@@ -77,6 +77,8 @@ function addDateTimeWatermark(docRef) {
     if (photoTime == 0){
         photoTime = basename(fileList[i])
         photoTime = photoTime.toString().slice(0, -4)
+        // 将破折号替换为冒号
+        photoTime = photoTime.replace(/-/g, ":");
     }
     //新建图层
     var layerRef = docRef.artLayers.add();
